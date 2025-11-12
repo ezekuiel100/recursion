@@ -32,8 +32,8 @@ function parseExpression(precedence) {
 
     const peekPrecedence = getPrecedence(curToken)
 
-    if (position < exp.length && precedence < peekPrecedence) {
-        return parseRight(leftExp)
+    while (position < exp.length && precedence < peekPrecedence) {
+        leftExp = parseRight(leftExp)
     }
 
     return leftExp
