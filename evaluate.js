@@ -1,27 +1,15 @@
 
 export function evaluate(ast) {
-    if (typeof ast == "string") return ast
+    if (typeof ast == "string") return Number(ast)
 
     let left = evaluate(ast.left)
     let right = evaluate(ast.right)
-    let op = ast.operator
 
-    let res
-    switch (op) {
-        case "+":
-            res = Number(left) + Number(right)
-            break
-        case "-":
-            res = Number(left) - Number(right)
-            break
-        case "*":
-            res = Number(left) * Number(right)
-            break
-        case "/":
-            res = Number(left) / Number(right)
-            break
+    switch (ast.operator) {
+        case "+": return left + right
+        case "-": return left - right
+        case "*": return left * right
+        case "/": return left / right
     }
-
-    return res
 }
 

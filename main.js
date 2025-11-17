@@ -1,6 +1,6 @@
 import { evaluate } from "./evaluate.js"
 
-const code = "1 + 2 * 1 + 4 * 5 + 2 - 1"
+const code = "1 + 2 * 3"
 const exp = code.split(" ")
 let position = 0
 
