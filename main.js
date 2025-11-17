@@ -1,4 +1,6 @@
-const code = "10 + 5 - 2"
+import { evaluate } from "./evaluate.js"
+
+const code = "1 + 2 * 1 + 4 * 5 + 2 - 1"
 const exp = code.split(" ")
 let position = 0
 
@@ -21,7 +23,8 @@ function nextToken() {
 
 function main() {
     let ast = parseExpression(0)
-    console.log(ast)
+    const result = evaluate(ast)
+    console.log(result)
 }
 main()
 
