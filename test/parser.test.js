@@ -1,6 +1,6 @@
 import test from "node:test"
-import { parser } from "../main.js"
 import assert from "node:assert"
+import { parser } from "../main.js"
 
 test("parser", async (t) => {
     const table = [
@@ -11,7 +11,6 @@ test("parser", async (t) => {
             input: "5 + 3 - 1 * 2 / 7", expected: { operator: '-', left: { operator: '+', left: '5', right: '3' }, right: { operator: '/', left: { operator: '*', left: '1', right: '2' }, right: '7' } }
         },
     ]
-
 
     for (let testCase of table) {
         await t.test(testCase.input, () => {
