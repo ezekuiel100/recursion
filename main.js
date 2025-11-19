@@ -7,7 +7,7 @@ let Precedence = {
     "/": 2,
 }
 
-function parser(code) {
+export function parser(code) {
     const exp = code.split(" ")
     let position = 0
 
